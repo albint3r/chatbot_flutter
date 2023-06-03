@@ -19,13 +19,12 @@ class GoogleSignInDataServiceImpl implements IGoogleSignInDataService {
   FutureOr<void> signIn() async {
     final googleUser = await googleSignIn.signIn();
     if (!isUser) return;
-    _user = googleUser as GoogleSignInAccount;
-    final googleAuth =
-        await googleUser.authentication as GoogleSignInAuthentication;
+    _user = googleUser;
+    final googleAuth = await googleUser?.authentication;
 
     final credential = GoogleAuthProvider.credential(
-      accessToken: googleAuth.accessToken,
-      idToken: googleAuth.idToken,
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
     );
 
     await FirebaseAuth.instance.signInWithCredential(credential);
