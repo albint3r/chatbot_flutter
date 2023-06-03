@@ -18,33 +18,39 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$AuthEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function() googleSingIn,
+    required TResult Function() signOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
+    TResult? Function()? googleSingIn,
+    TResult? Function()? signOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? googleSingIn,
+    TResult Function()? signOut,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_AuthEventGoogleSingIn value) googleSingIn,
+    required TResult Function(_AuthEventSignOut value) signOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(_AuthEventGoogleSingIn value)? googleSingIn,
+    TResult? Function(_AuthEventSignOut value)? signOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_AuthEventGoogleSingIn value)? googleSingIn,
+    TResult Function(_AuthEventSignOut value)? signOut,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -68,34 +74,35 @@ class _$AuthEventCopyWithImpl<$Res, $Val extends AuthEvent>
 }
 
 /// @nodoc
-abstract class _$$_StartedCopyWith<$Res> {
-  factory _$$_StartedCopyWith(
-          _$_Started value, $Res Function(_$_Started) then) =
-      __$$_StartedCopyWithImpl<$Res>;
+abstract class _$$_AuthEventGoogleSingInCopyWith<$Res> {
+  factory _$$_AuthEventGoogleSingInCopyWith(_$_AuthEventGoogleSingIn value,
+          $Res Function(_$_AuthEventGoogleSingIn) then) =
+      __$$_AuthEventGoogleSingInCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_StartedCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$_Started>
-    implements _$$_StartedCopyWith<$Res> {
-  __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
+class __$$_AuthEventGoogleSingInCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$_AuthEventGoogleSingIn>
+    implements _$$_AuthEventGoogleSingInCopyWith<$Res> {
+  __$$_AuthEventGoogleSingInCopyWithImpl(_$_AuthEventGoogleSingIn _value,
+      $Res Function(_$_AuthEventGoogleSingIn) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Started implements _Started {
-  const _$_Started();
+class _$_AuthEventGoogleSingIn implements _AuthEventGoogleSingIn {
+  const _$_AuthEventGoogleSingIn();
 
   @override
   String toString() {
-    return 'AuthEvent.started()';
+    return 'AuthEvent.googleSingIn()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Started);
+        (other.runtimeType == runtimeType && other is _$_AuthEventGoogleSingIn);
   }
 
   @override
@@ -104,27 +111,30 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function() googleSingIn,
+    required TResult Function() signOut,
   }) {
-    return started();
+    return googleSingIn();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
+    TResult? Function()? googleSingIn,
+    TResult? Function()? signOut,
   }) {
-    return started?.call();
+    return googleSingIn?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? googleSingIn,
+    TResult Function()? signOut,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started();
+    if (googleSingIn != null) {
+      return googleSingIn();
     }
     return orElse();
   }
@@ -132,34 +142,139 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_AuthEventGoogleSingIn value) googleSingIn,
+    required TResult Function(_AuthEventSignOut value) signOut,
   }) {
-    return started(this);
+    return googleSingIn(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(_AuthEventGoogleSingIn value)? googleSingIn,
+    TResult? Function(_AuthEventSignOut value)? signOut,
   }) {
-    return started?.call(this);
+    return googleSingIn?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_AuthEventGoogleSingIn value)? googleSingIn,
+    TResult Function(_AuthEventSignOut value)? signOut,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started(this);
+    if (googleSingIn != null) {
+      return googleSingIn(this);
     }
     return orElse();
   }
 }
 
-abstract class _Started implements AuthEvent {
-  const factory _Started() = _$_Started;
+abstract class _AuthEventGoogleSingIn implements AuthEvent {
+  const factory _AuthEventGoogleSingIn() = _$_AuthEventGoogleSingIn;
+}
+
+/// @nodoc
+abstract class _$$_AuthEventSignOutCopyWith<$Res> {
+  factory _$$_AuthEventSignOutCopyWith(
+          _$_AuthEventSignOut value, $Res Function(_$_AuthEventSignOut) then) =
+      __$$_AuthEventSignOutCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_AuthEventSignOutCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$_AuthEventSignOut>
+    implements _$$_AuthEventSignOutCopyWith<$Res> {
+  __$$_AuthEventSignOutCopyWithImpl(
+      _$_AuthEventSignOut _value, $Res Function(_$_AuthEventSignOut) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_AuthEventSignOut implements _AuthEventSignOut {
+  const _$_AuthEventSignOut();
+
+  @override
+  String toString() {
+    return 'AuthEvent.signOut()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_AuthEventSignOut);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() googleSingIn,
+    required TResult Function() signOut,
+  }) {
+    return signOut();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? googleSingIn,
+    TResult? Function()? signOut,
+  }) {
+    return signOut?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? googleSingIn,
+    TResult Function()? signOut,
+    required TResult orElse(),
+  }) {
+    if (signOut != null) {
+      return signOut();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AuthEventGoogleSingIn value) googleSingIn,
+    required TResult Function(_AuthEventSignOut value) signOut,
+  }) {
+    return signOut(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AuthEventGoogleSingIn value)? googleSingIn,
+    TResult? Function(_AuthEventSignOut value)? signOut,
+  }) {
+    return signOut?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AuthEventGoogleSingIn value)? googleSingIn,
+    TResult Function(_AuthEventSignOut value)? signOut,
+    required TResult orElse(),
+  }) {
+    if (signOut != null) {
+      return signOut(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AuthEventSignOut implements AuthEvent {
+  const factory _AuthEventSignOut() = _$_AuthEventSignOut;
 }
 
 /// @nodoc

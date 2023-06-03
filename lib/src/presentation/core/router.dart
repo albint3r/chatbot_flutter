@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 
 import '../google_sign_in/sign_in_page.dart';
-import '../home/home_page.dart';
+import '../home/home_or_sign_in_page.dart';
 
 part 'router.gr.dart';
 
@@ -13,11 +13,11 @@ class AppRouter extends _$AppRouter {
   @override
   List<AutoRoute> get routes => [
         AutoRoute(
-          page: SignInRoute.page,
+          initial: true,
+          page: HomeOrSignInRoute.page,
         ),
         AutoRoute(
-          initial: true,
-          page: HomeRoute.page,
-        )
+          page: SignInRoute.page,
+        ),
       ];
 }

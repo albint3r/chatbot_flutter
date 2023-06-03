@@ -21,10 +21,10 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const SignInPage(),
       );
     },
-    HomeRoute.name: (routeData) {
+    HomeOrSignInRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const HomePage(),
+        child: const HomeOrSignInPage(),
       );
     },
   };
@@ -45,15 +45,15 @@ class SignInRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [HomePage]
-class HomeRoute extends PageRouteInfo<void> {
-  const HomeRoute({List<PageRouteInfo>? children})
+/// [HomeOrSignInPage]
+class HomeOrSignInRoute extends PageRouteInfo<void> {
+  const HomeOrSignInRoute({List<PageRouteInfo>? children})
       : super(
-          HomeRoute.name,
+          HomeOrSignInRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'HomeRoute';
+  static const String name = 'HomeOrSignInRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../aplication/auth/auth_bloc.dart';
 @RoutePage()
 class SignInPage extends StatelessWidget {
   const SignInPage({
@@ -12,7 +14,15 @@ class SignInPage extends StatelessWidget {
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [ElevatedButton(onPressed: () {}, child: Text('Click'))],
+        children: [
+          ElevatedButton(
+              onPressed: () {
+                context
+                    .read<AuthBloc>()
+                    .add( const AuthEvent.googleSingIn());
+              },
+              child: const Text('Google LogIn'))
+        ],
       ),
     );
   }

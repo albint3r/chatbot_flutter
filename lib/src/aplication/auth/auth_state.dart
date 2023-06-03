@@ -10,8 +10,12 @@ class AuthState with _$AuthState {
 
   const AuthState._();
 
-  factory AuthState.initial() => const AuthState(
-    isLoading: false,
-    isAuthenticated: false,
-  );
+  factory AuthState.initial() {
+    final user = getIt<IAuthFacade>();
+    return AuthState(
+      user: user.currentUser,
+      isLoading: false,
+      isAuthenticated: false,
+    );
+  }
 }

@@ -14,14 +14,10 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appRouter = AppRouter();
-    print('-' * 100);
-    print('iniciando');
-    print(FirebaseAuth.instance.currentUser);
-    print('-' * 100);
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => getIt<AuthBloc>()..add(const AuthEvent.started()),
+          create: (context) => getIt<AuthBloc>(),
         )
       ],
       child: MaterialApp.router(
