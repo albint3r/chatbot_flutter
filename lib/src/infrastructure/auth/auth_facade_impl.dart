@@ -27,6 +27,7 @@ class AuthFacadeImpl implements IAuthFacade {
   @override
   Future<void> signOut() async {
     await auth.signOut();
+    await googleSingIn.signOut();
   }
 
 

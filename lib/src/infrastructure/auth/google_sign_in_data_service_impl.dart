@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
@@ -30,5 +32,10 @@ class GoogleSignInDataServiceImpl implements IGoogleSignInDataService {
     );
 
     await FirebaseAuth.instance.signInWithCredential(credential);
+  }
+
+  @override
+  FutureOr<void> signOut() async {
+    await googleSignIn.signOut();
   }
 }

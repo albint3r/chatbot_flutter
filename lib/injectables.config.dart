@@ -12,7 +12,7 @@
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import 'src/aplication/auth/auth_bloc.dart' as _i9;
+import 'src/application/auth/auth_bloc.dart' as _i9;
 import 'src/domain/auth/i_auth_data_service.dart' as _i3;
 import 'src/domain/auth/i_auth_facade.dart' as _i7;
 import 'src/domain/auth/i_google_sing_in_data_service.dart' as _i5;

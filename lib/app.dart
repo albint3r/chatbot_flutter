@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'injectables.dart';
-import 'src/aplication/auth/auth_bloc.dart';
+import 'src/application/auth/auth_bloc.dart';
 import 'src/presentation/core/router.dart';
 
 class App extends StatelessWidget {
