@@ -1,8 +1,9 @@
-import 'package:chatbot/src/presentation/sign_in/widgets/sign_in_form.dart';
-import 'package:chatbot/src/presentation/sign_in/widgets/sign_in_with_google_or_facebook.dart';
-import 'package:chatbot/src/presentation/sign_in/widgets/sign_up_text_button.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+
+import 'sign_in_form.dart';
+import 'sign_in_with_google_or_facebook/sign_in_with_google_or_facebook.dart';
+import 'sign_up_text_button.dart';
 
 class BodySignIn extends StatelessWidget {
   const BodySignIn({

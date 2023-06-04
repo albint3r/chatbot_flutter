@@ -9,16 +9,16 @@ abstract class ConstTextTheme {
       "Roboto",
       TextTheme(
         titleLarge: TextStyle(
-          fontSize: 60,
-          color: colorScheme.primary,
+          fontSize: 30,
+          color: colorScheme.secondary,
         ),
         titleMedium: TextStyle(
-          fontSize: 56,
-          color: colorScheme.primary,
+          fontSize: 24,
+          color: colorScheme.secondary,
         ),
         titleSmall: TextStyle(
-          fontSize: 45,
-          color: colorScheme.primary,
+          fontSize: 20,
+          color: colorScheme.secondary,
         ),
         bodyLarge: const TextStyle(
           fontSize: 14,
@@ -41,6 +41,10 @@ abstract class ConstTextTheme {
         labelSmall: TextStyle(
           fontSize: 14,
           color: colorScheme.onPrimary,
+        ),
+        displaySmall: TextStyle(
+          fontSize: 14,
+          color: colorScheme.surface,
         ),
       ),
     );
