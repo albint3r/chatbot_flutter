@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'curve_container.dart';
+
 class SingInForm extends StatelessWidget {
   const SingInForm({
     super.key,
@@ -7,13 +9,9 @@ class SingInForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Stack(
-      children: [
-        Container(
-          color: Colors.blueAccent,
-          height: size.height * .55,
-        ),
+      children: const [
+        CurveContainer(),
       ],
     );
   }
