@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'injectables.dart';
 import 'src/application/auth/auth_bloc.dart';
 import 'src/presentation/core/router.dart';
+import 'src/presentation/core/theme/theme_config_style.dart';
 
 class App extends StatelessWidget {
   const App({
@@ -20,6 +21,10 @@ class App extends StatelessWidget {
         )
       ],
       child: MaterialApp.router(
+        theme: ThemeConfigStyle.light,
+        darkTheme: ThemeConfigStyle.dark,
+        themeMode: ThemeMode.dark,
+        title: 'Perfect Deals Pricing App',
         routerConfig: appRouter.config(),
       ),
     );
