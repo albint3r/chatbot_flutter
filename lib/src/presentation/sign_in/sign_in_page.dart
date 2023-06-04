@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../application/auth/auth_bloc.dart';
+
 @RoutePage()
 class SignInPage extends StatelessWidget {
   const SignInPage({
@@ -16,12 +17,11 @@ class SignInPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           ElevatedButton(
-              onPressed: () {
-                context
-                    .read<AuthBloc>()
-                    .add( const AuthEvent.googleSingIn());
-              },
-              child: const Text('Google LogIn'))
+            onPressed: () {
+              context.read<AuthBloc>().add(const AuthEvent.googleSingIn());
+            },
+            child: const Text('Google LogIn'),
+          )
         ],
       ),
     );

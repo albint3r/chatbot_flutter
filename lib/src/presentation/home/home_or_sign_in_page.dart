@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../application/auth/auth_bloc.dart';
-import '../google_sign_in/sign_in_page.dart';
+import '../sign_in/sign_in_page.dart';
 import 'widgets/home_page.dart';
 
 @RoutePage()
