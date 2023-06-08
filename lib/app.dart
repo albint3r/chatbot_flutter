@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'injectables.dart';
 import 'src/application/auth/auth_bloc.dart';
-import 'src/presentation/core/router.dart';
+import 'src/presentation/core/router/router.dart';
 import 'src/presentation/core/theme/theme_config_style.dart';
 
 class App extends StatelessWidget {

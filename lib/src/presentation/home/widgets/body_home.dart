@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 
 import '../../../application/auth/auth_bloc.dart';
-import '../../core/router.dart';
+import '../../core/router/router.dart';
 
 class BodyHome extends StatelessWidget {
   const BodyHome({

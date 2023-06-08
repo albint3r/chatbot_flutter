@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 
-import '../chat/chat_page.dart';
-import '../home/home_page.dart';
-import '../sign_in/sign_in_page.dart';
+import '../../chat/chat_page.dart';
+import '../../home/home_page.dart';
+import '../../sign_in/sign_in_page.dart';
 
 part 'router.gr.dart';
 
