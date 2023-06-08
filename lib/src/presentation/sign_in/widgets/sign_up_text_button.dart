@@ -1,5 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+
+import '../../core/router/app_router.dart';
 
 class SignUpTextButton extends StatelessWidget {
   const SignUpTextButton({
@@ -23,6 +26,7 @@ class SignUpTextButton extends StatelessWidget {
             onPressed: () {
               // TODO CREATE A NAVIGATION ROUTE TO THE CREATE ACCOUNT PAGE.
               // This page don't exist at the moment.
+              context.router.push(const SignUpRoute());
             },
             child: const Text(
               "Sign up",
