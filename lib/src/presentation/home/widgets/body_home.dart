@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 
 import '../../../application/auth/auth_bloc.dart';
-import '../../core/router/router.dart';
+import '../../core/router/app_router.dart';
 
 class BodyHome extends StatelessWidget {
   const BodyHome({
@@ -33,6 +33,14 @@ class BodyHome extends StatelessWidget {
                 );
               },
               child: const Text('Go to Chat'),
+            ),
+            TextButton(
+              onPressed: () {
+                context.router.push(
+                  const SignUpRoute(),
+                );
+              },
+              child: const Text('Go to Sign Up'),
             )
           ],
         ),

@@ -1,11 +1,11 @@
-import 'package:chatbot/src/presentation/sign_in/sign_in_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'injectables.dart';
 import 'src/application/auth/auth_bloc.dart';
-import 'src/presentation/core/router/router.dart';
-import 'src/presentation/core/theme/theme_config_style.dart';
+import 'src/presentation/core/router/app_router.dart';
+import 'src/presentation/core/router/app_router_delegate.dart';
+import 'src/presentation/core/router/router_no_users.dart';
 
 class App extends StatelessWidget {
   const App({
@@ -26,21 +26,12 @@ class App extends StatelessWidget {
             buildWhen: (prev, curr) => prev.user != curr.user,
             builder: (context, state) {
               if (state.user == null) {
-                return MaterialApp(
-                  theme: ThemeConfigStyle.light,
-                  darkTheme: ThemeConfigStyle.dark,
-                  themeMode: ThemeMode.dark,
-                  title: 'Sign in Perfect Deals',
-                  home: const SignInPage(),
+                return AppRouterDelegate.router(
+                  appRouter: getIt<RouterNoUsers>(),
                 );
               }
-              final appRouter = getIt<AppRouter>();
-              return MaterialApp.router(
-                theme: ThemeConfigStyle.light,
-                darkTheme: ThemeConfigStyle.dark,
-                themeMode: ThemeMode.dark,
-                title: 'Perfect Deals Pricing App',
-                routerConfig: appRouter.config(),
+              return AppRouterDelegate.router(
+                appRouter: getIt<AppRouter>(),
               );
             },
           );
