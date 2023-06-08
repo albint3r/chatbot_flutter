@@ -1,17 +1,17 @@
 include: package:lint/analysis_options.yaml
 
 analyzer:
+  enable-experiment:
+    - records
   plugins:
     - dart_code_metrics
   strong-mode:
-    implicit-casts: true
   errors:
     avoid_web_libraries_in_flutter: error
     invalid_annotation_target: ignore
   exclude:
     - "lib/**.freezed.dart"
     - "lib/**.g.dart"
-    - "lib/**.gr.dart"
     - "test/**.mocks.dart"
     - "lib/gen/**"
     - "lib/injection.config.dart"
@@ -43,8 +43,8 @@ dart_code_metrics:
           - private-methods
     - prefer-moving-to-variable:
         allowed-duplicated-chains: 3
-    - prefer-extracting-callbacks:
-        allowed-line-count: 3
+    # - prefer-extracting-callbacks:
+    #     allowed-line-count: 3
     - prefer-match-file-name
     - prefer-immediate-return
     - prefer-correct-edge-insets-constructor
