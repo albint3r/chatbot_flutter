@@ -14,7 +14,6 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final appRouter = AppRouter();
     return MultiBlocProvider(
       providers: [
         BlocProvider(
@@ -35,6 +34,7 @@ class App extends StatelessWidget {
                   home: const SignInPage(),
                 );
               }
+              final appRouter = getIt<AppRouter>();
               return MaterialApp.router(
                 theme: ThemeConfigStyle.light,
                 darkTheme: ThemeConfigStyle.dark,
