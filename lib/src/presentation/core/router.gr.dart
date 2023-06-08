@@ -15,10 +15,16 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
-    HomeOrSignInRoute.name: (routeData) {
+    ChatRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const HomeOrSignInPage(),
+        child: const ChatPage(),
+      );
+    },
+    HomeRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const HomePage(),
       );
     },
     SignInRoute.name: (routeData) {
@@ -31,15 +37,29 @@ abstract class _$AppRouter extends RootStackRouter {
 }
 
 /// generated route for
-/// [HomeOrSignInPage]
-class HomeOrSignInRoute extends PageRouteInfo<void> {
-  const HomeOrSignInRoute({List<PageRouteInfo>? children})
+/// [ChatPage]
+class ChatRoute extends PageRouteInfo<void> {
+  const ChatRoute({List<PageRouteInfo>? children})
       : super(
-          HomeOrSignInRoute.name,
+          ChatRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'HomeOrSignInRoute';
+  static const String name = 'ChatRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [HomePage]
+class HomeRoute extends PageRouteInfo<void> {
+  const HomeRoute({List<PageRouteInfo>? children})
+      : super(
+          HomeRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'HomeRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

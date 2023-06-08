@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 
-import '../home/home_or_sign_in_page.dart';
+import '../chat/chat_page.dart';
+import '../home/home_page.dart';
 import '../sign_in/sign_in_page.dart';
 
 part 'router.gr.dart';
@@ -14,10 +15,13 @@ class AppRouter extends _$AppRouter {
   List<AutoRoute> get routes => [
         AutoRoute(
           initial: true,
-          page: HomeOrSignInRoute.page,
+          page: HomeRoute.page,
         ),
         AutoRoute(
           page: SignInRoute.page,
         ),
+        AutoRoute(
+          page: ChatRoute.page,
+        )
       ];
 }
