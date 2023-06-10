@@ -9,7 +9,8 @@ import '../../sign_up/sign_up_page.dart';
 
 part 'router_no_users.gr.dart';
 
-@Injectable(as: _$RouterNoUsers)
+final routerNoUser = RouterNoUsers();
+
 @AutoRouterConfig()
 class RouterNoUsers extends _$RouterNoUsers {
   @override

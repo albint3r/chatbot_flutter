@@ -21,7 +21,7 @@ abstract class ConstTextTheme {
           color: colorScheme.secondary,
         ),
         bodyLarge: const TextStyle(
-          fontSize: 14,
+          fontSize: 16,
         ),
         bodyMedium: const TextStyle(
           fontSize: 14,

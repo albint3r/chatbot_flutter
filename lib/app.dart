@@ -27,12 +27,12 @@ class App extends StatelessWidget {
             builder: (context, state) {
               if (state.user == null) {
                 return AppRouterDelegate.router(
-                  appRouter: getIt<RouterNoUsers>(),
+                  appRouter: routerNoUser,
                   context: context,
                 );
               }
               return AppRouterDelegate.router(
-                appRouter: getIt<AppRouter>(),
+                appRouter: appRouter,
                 context: context,
               );
             },

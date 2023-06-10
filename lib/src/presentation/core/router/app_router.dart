@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../../injectables.dart';
 import '../../chat/chat_page.dart';
 import '../../home/home_page.dart';
 import '../../sign_in/sign_in_page.dart';
@@ -8,8 +9,8 @@ import '../../sign_up/sign_up_page.dart';
 
 part 'app_router.gr.dart';
 
+final appRouter = AppRouter();
 
-@Injectable(as: _$AppRouter)
 @AutoRouterConfig()
 class AppRouter extends _$AppRouter {
   @override
