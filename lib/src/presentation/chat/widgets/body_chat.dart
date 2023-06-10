@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/widgets/app_close_bar.dart';
+import 'chat_text_field.dart';
 import 'message_box.dart';
 import 'chat_container.dart';
 
@@ -19,7 +20,8 @@ class BodyChat extends StatelessWidget {
             AppCloseBar(),
             Expanded(
               child: ChatContainer(),
-            )
+            ),
+            ChatTextField(),
           ],
         ),
       ),
