@@ -17,11 +17,11 @@ class MessageBox extends StatefulWidget {
 class _MessageBoxState extends State<MessageBox>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller = AnimationController(
-    duration: const Duration(seconds: 1),
+    duration: const Duration(milliseconds: 1500),
     vsync: this,
   )..forward();
   late final Animation<Offset> _offsetAnimation = Tween<Offset>(
-    begin: _animationDirectionByMessageType, // <- right to left
+    begin: _animationDirectionByMessageType,
     end: Offset.zero,
   ).animate(
     CurvedAnimation(
@@ -38,9 +38,9 @@ class _MessageBoxState extends State<MessageBox>
 
   Offset get _animationDirectionByMessageType {
     if (widget.message.isFromUser) {
-      return const Offset(-1.5, 0.0);
+      return const Offset(-7, 0.0);
     } else {
-      return const Offset(1.5, 0.0);
+      return const Offset(7, 0.0);
     }
   }
 
@@ -83,7 +83,9 @@ class _MessageBoxState extends State<MessageBox>
       child: Padding(
         padding: _getPadding(width),
         child: Container(
-          width: width * .80,
+          constraints: BoxConstraints(
+            maxWidth: width * .80,
+          ),
           decoration: _boxDecoration(theme),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
