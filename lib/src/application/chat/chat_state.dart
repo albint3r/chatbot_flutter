@@ -6,9 +6,11 @@ class ChatState with _$ChatState {
     required bool isLoading,
     FormGroup? form,
     String? chatControlName,
+    required List<Message> chatMessages,
   }) = _Initial;
 
   factory ChatState.initial() => const ChatState(
         isLoading: true,
+        chatMessages: <Message>[],
       );
 }

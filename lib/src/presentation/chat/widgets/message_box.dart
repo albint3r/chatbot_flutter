@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
 
+import '../../../domain/chat/message.dart';
+
 class MessageBox extends StatelessWidget {
   const MessageBox({
     super.key,
-    this.isUserMsg = false,
+    required this.message,
   });
 
-  final bool isUserMsg;
+  final Message message;
 
-  TextAlign get _textAlign => isUserMsg ? TextAlign.right : TextAlign.left;
+  TextAlign get _textAlign =>
+      message.isFromUser ? TextAlign.right : TextAlign.left;
 
   BoxDecoration _boxDecoration(ThemeData theme) {
     final color = theme.colorScheme;
     return BoxDecoration(
-      color: isUserMsg ? color.onSecondary : color.secondaryContainer,
+      color: message.isFromUser ? color.onSecondary : color.secondaryContainer,
       borderRadius: const BorderRadius.all(
         Radius.circular(20),
       ),
@@ -23,7 +26,7 @@ class MessageBox extends StatelessWidget {
   EdgeInsets _getPadding(double width) {
     const double widthPercentage = .10;
     const double topPadding = 15;
-    if (isUserMsg) {
+    if (message.isFromUser) {
       return EdgeInsets.only(
         left: width * widthPercentage,
         top: topPadding,
@@ -47,7 +50,7 @@ class MessageBox extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
-            'I commented on Figma, I want to add some fancy icons. Do you have any icon set? I commented on Figma, I want to add some fancy icons. Do you have any icon set? I commented on Figma, I want to add some fancy icons. Do you have any icon set?',
+            message.text,
             textAlign: _textAlign,
             style: theme.textTheme.bodyLarge,
           ),

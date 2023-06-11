@@ -282,6 +282,7 @@ mixin _$ChatState {
   bool get isLoading => throw _privateConstructorUsedError;
   FormGroup? get form => throw _privateConstructorUsedError;
   String? get chatControlName => throw _privateConstructorUsedError;
+  List<Message> get chatMessages => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ChatStateCopyWith<ChatState> get copyWith =>
@@ -293,7 +294,11 @@ abstract class $ChatStateCopyWith<$Res> {
   factory $ChatStateCopyWith(ChatState value, $Res Function(ChatState) then) =
       _$ChatStateCopyWithImpl<$Res, ChatState>;
   @useResult
-  $Res call({bool isLoading, FormGroup? form, String? chatControlName});
+  $Res call(
+      {bool isLoading,
+      FormGroup? form,
+      String? chatControlName,
+      List<Message> chatMessages});
 }
 
 /// @nodoc
@@ -312,6 +317,7 @@ class _$ChatStateCopyWithImpl<$Res, $Val extends ChatState>
     Object? isLoading = null,
     Object? form = freezed,
     Object? chatControlName = freezed,
+    Object? chatMessages = null,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
@@ -326,6 +332,10 @@ class _$ChatStateCopyWithImpl<$Res, $Val extends ChatState>
           ? _value.chatControlName
           : chatControlName // ignore: cast_nullable_to_non_nullable
               as String?,
+      chatMessages: null == chatMessages
+          ? _value.chatMessages
+          : chatMessages // ignore: cast_nullable_to_non_nullable
+              as List<Message>,
     ) as $Val);
   }
 }
@@ -337,7 +347,11 @@ abstract class _$$_InitialCopyWith<$Res> implements $ChatStateCopyWith<$Res> {
       __$$_InitialCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isLoading, FormGroup? form, String? chatControlName});
+  $Res call(
+      {bool isLoading,
+      FormGroup? form,
+      String? chatControlName,
+      List<Message> chatMessages});
 }
 
 /// @nodoc
@@ -353,6 +367,7 @@ class __$$_InitialCopyWithImpl<$Res>
     Object? isLoading = null,
     Object? form = freezed,
     Object? chatControlName = freezed,
+    Object? chatMessages = null,
   }) {
     return _then(_$_Initial(
       isLoading: null == isLoading
@@ -367,6 +382,10 @@ class __$$_InitialCopyWithImpl<$Res>
           ? _value.chatControlName
           : chatControlName // ignore: cast_nullable_to_non_nullable
               as String?,
+      chatMessages: null == chatMessages
+          ? _value._chatMessages
+          : chatMessages // ignore: cast_nullable_to_non_nullable
+              as List<Message>,
     ));
   }
 }
@@ -374,7 +393,12 @@ class __$$_InitialCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Initial implements _Initial {
-  const _$_Initial({required this.isLoading, this.form, this.chatControlName});
+  const _$_Initial(
+      {required this.isLoading,
+      this.form,
+      this.chatControlName,
+      required final List<Message> chatMessages})
+      : _chatMessages = chatMessages;
 
   @override
   final bool isLoading;
@@ -382,10 +406,17 @@ class _$_Initial implements _Initial {
   final FormGroup? form;
   @override
   final String? chatControlName;
+  final List<Message> _chatMessages;
+  @override
+  List<Message> get chatMessages {
+    if (_chatMessages is EqualUnmodifiableListView) return _chatMessages;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_chatMessages);
+  }
 
   @override
   String toString() {
-    return 'ChatState(isLoading: $isLoading, form: $form, chatControlName: $chatControlName)';
+    return 'ChatState(isLoading: $isLoading, form: $form, chatControlName: $chatControlName, chatMessages: $chatMessages)';
   }
 
   @override
@@ -397,12 +428,14 @@ class _$_Initial implements _Initial {
                 other.isLoading == isLoading) &&
             (identical(other.form, form) || other.form == form) &&
             (identical(other.chatControlName, chatControlName) ||
-                other.chatControlName == chatControlName));
+                other.chatControlName == chatControlName) &&
+            const DeepCollectionEquality()
+                .equals(other._chatMessages, _chatMessages));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, isLoading, form, chatControlName);
+  int get hashCode => Object.hash(runtimeType, isLoading, form, chatControlName,
+      const DeepCollectionEquality().hash(_chatMessages));
 
   @JsonKey(ignore: true)
   @override
@@ -415,7 +448,8 @@ abstract class _Initial implements ChatState {
   const factory _Initial(
       {required final bool isLoading,
       final FormGroup? form,
-      final String? chatControlName}) = _$_Initial;
+      final String? chatControlName,
+      required final List<Message> chatMessages}) = _$_Initial;
 
   @override
   bool get isLoading;
@@ -423,6 +457,8 @@ abstract class _Initial implements ChatState {
   FormGroup? get form;
   @override
   String? get chatControlName;
+  @override
+  List<Message> get chatMessages;
   @override
   @JsonKey(ignore: true)
   _$$_InitialCopyWith<_$_Initial> get copyWith =>
