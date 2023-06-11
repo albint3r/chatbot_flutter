@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:reactive_forms/reactive_forms.dart';
+
+import '../../../application/chat/chat_bloc.dart';
 
 class SendButton extends StatelessWidget {
   const SendButton({
@@ -14,22 +18,32 @@ class SendButton extends StatelessWidget {
         color: colorScheme.secondary,
       );
 
+  void _sendMessage(BuildContext context) => context.read<ChatBloc>().add(
+        const ChatEvent.sendMessage(),
+      );
+
   @override
   Widget build(BuildContext context) {
+    final bloc = context.watch<ChatBloc>();
+    final state = bloc.state;
     final colorScheme = Theme.of(context).colorScheme;
-    return InkWell(
-      onTap: () {
-        // TODO IMPLEMENT SEND MESSAGE HERE!
+    return ReactiveFormConsumer(
+      builder: (context, _, __) {
+        return InkWell(
+          onTap: !state.form!.valid ? null : () => _sendMessage(context),
+          child: Container(
+            decoration: _boxDecoration(
+              colorScheme,
+            ),
+            width: 50,
+            height: 50,
+            child: Icon(
+              Icons.send,
+              color: colorScheme.onSecondary,
+            ),
+          ),
+        );
       },
-      child: Container(
-        decoration: _boxDecoration(colorScheme),
-        width: 50,
-        height: 50,
-        child: Icon(
-          Icons.send,
-          color: colorScheme.onSecondary,
-        ),
-      ),
     );
   }
 }

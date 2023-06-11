@@ -19,32 +19,38 @@ mixin _$ChatEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() sendMessage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? sendMessage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? sendMessage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChatEventStarted value) started,
+    required TResult Function(_ChatEventSendMessage value) sendMessage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChatEventStarted value)? started,
+    TResult? Function(_ChatEventSendMessage value)? sendMessage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChatEventStarted value)? started,
+    TResult Function(_ChatEventSendMessage value)? sendMessage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -106,6 +112,7 @@ class _$_ChatEventStarted implements _ChatEventStarted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() sendMessage,
   }) {
     return started();
   }
@@ -114,6 +121,7 @@ class _$_ChatEventStarted implements _ChatEventStarted {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? sendMessage,
   }) {
     return started?.call();
   }
@@ -122,6 +130,7 @@ class _$_ChatEventStarted implements _ChatEventStarted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? sendMessage,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -134,6 +143,7 @@ class _$_ChatEventStarted implements _ChatEventStarted {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChatEventStarted value) started,
+    required TResult Function(_ChatEventSendMessage value) sendMessage,
   }) {
     return started(this);
   }
@@ -142,6 +152,7 @@ class _$_ChatEventStarted implements _ChatEventStarted {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChatEventStarted value)? started,
+    TResult? Function(_ChatEventSendMessage value)? sendMessage,
   }) {
     return started?.call(this);
   }
@@ -150,6 +161,7 @@ class _$_ChatEventStarted implements _ChatEventStarted {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChatEventStarted value)? started,
+    TResult Function(_ChatEventSendMessage value)? sendMessage,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -161,6 +173,108 @@ class _$_ChatEventStarted implements _ChatEventStarted {
 
 abstract class _ChatEventStarted implements ChatEvent {
   const factory _ChatEventStarted() = _$_ChatEventStarted;
+}
+
+/// @nodoc
+abstract class _$$_ChatEventSendMessageCopyWith<$Res> {
+  factory _$$_ChatEventSendMessageCopyWith(_$_ChatEventSendMessage value,
+          $Res Function(_$_ChatEventSendMessage) then) =
+      __$$_ChatEventSendMessageCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_ChatEventSendMessageCopyWithImpl<$Res>
+    extends _$ChatEventCopyWithImpl<$Res, _$_ChatEventSendMessage>
+    implements _$$_ChatEventSendMessageCopyWith<$Res> {
+  __$$_ChatEventSendMessageCopyWithImpl(_$_ChatEventSendMessage _value,
+      $Res Function(_$_ChatEventSendMessage) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_ChatEventSendMessage implements _ChatEventSendMessage {
+  const _$_ChatEventSendMessage();
+
+  @override
+  String toString() {
+    return 'ChatEvent.sendMessage()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_ChatEventSendMessage);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() sendMessage,
+  }) {
+    return sendMessage();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? sendMessage,
+  }) {
+    return sendMessage?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? sendMessage,
+    required TResult orElse(),
+  }) {
+    if (sendMessage != null) {
+      return sendMessage();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ChatEventStarted value) started,
+    required TResult Function(_ChatEventSendMessage value) sendMessage,
+  }) {
+    return sendMessage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ChatEventStarted value)? started,
+    TResult? Function(_ChatEventSendMessage value)? sendMessage,
+  }) {
+    return sendMessage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ChatEventStarted value)? started,
+    TResult Function(_ChatEventSendMessage value)? sendMessage,
+    required TResult orElse(),
+  }) {
+    if (sendMessage != null) {
+      return sendMessage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChatEventSendMessage implements ChatEvent {
+  const factory _ChatEventSendMessage() = _$_ChatEventSendMessage;
 }
 
 /// @nodoc
