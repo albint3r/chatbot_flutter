@@ -1,14 +1,33 @@
-import 'package:chatbot/src/presentation/chat/widgets/send_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 import '../../../application/chat/chat_bloc.dart';
+import 'send_button.dart';
 
 class ChatTextField extends StatelessWidget {
   const ChatTextField({
     super.key,
   });
+
+  BoxDecoration _decoratedBox(ThemeData theme) {
+    return BoxDecoration(
+      color: theme.colorScheme.background,
+      borderRadius: const BorderRadius.all(
+        Radius.circular(
+          30,
+        ),
+      ),
+      boxShadow: const [
+        BoxShadow(
+          color: Colors.white,
+          blurRadius: 10.0,
+          spreadRadius: -8,
+          offset: Offset(0, 6),
+        ),
+      ],
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,18 +44,22 @@ class ChatTextField extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Card(
-              child: SizedBox(
-                height: 60,
-                width: size.width * .80,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: ReactiveTextField(
-                    style: theme.textTheme.bodyMedium,
-                    maxLines: 2,
-                    formControlName: state.chatControlName,
-                    // formControlName: state!.form!.rawValue!.keys![0],
+            Container(
+              height: 75,
+              width: size.width * .80,
+              decoration: _decoratedBox(theme),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                child: ReactiveTextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(40.0),
+                    ),
                   ),
+                  style: theme.textTheme.bodyMedium,
+                  maxLines: 2,
+                  formControlName: state.chatControlName,
+                  // formControlName: state!.form!.rawValue!.keys![0],
                 ),
               ),
             ),
