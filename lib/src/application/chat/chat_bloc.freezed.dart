@@ -281,6 +281,7 @@ abstract class _ChatEventSendMessage implements ChatEvent {
 mixin _$ChatState {
   bool get isLoading => throw _privateConstructorUsedError;
   FormGroup? get form => throw _privateConstructorUsedError;
+  String? get chatControlName => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ChatStateCopyWith<ChatState> get copyWith =>
@@ -292,7 +293,7 @@ abstract class $ChatStateCopyWith<$Res> {
   factory $ChatStateCopyWith(ChatState value, $Res Function(ChatState) then) =
       _$ChatStateCopyWithImpl<$Res, ChatState>;
   @useResult
-  $Res call({bool isLoading, FormGroup? form});
+  $Res call({bool isLoading, FormGroup? form, String? chatControlName});
 }
 
 /// @nodoc
@@ -310,6 +311,7 @@ class _$ChatStateCopyWithImpl<$Res, $Val extends ChatState>
   $Res call({
     Object? isLoading = null,
     Object? form = freezed,
+    Object? chatControlName = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
@@ -320,6 +322,10 @@ class _$ChatStateCopyWithImpl<$Res, $Val extends ChatState>
           ? _value.form
           : form // ignore: cast_nullable_to_non_nullable
               as FormGroup?,
+      chatControlName: freezed == chatControlName
+          ? _value.chatControlName
+          : chatControlName // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -331,7 +337,7 @@ abstract class _$$_InitialCopyWith<$Res> implements $ChatStateCopyWith<$Res> {
       __$$_InitialCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isLoading, FormGroup? form});
+  $Res call({bool isLoading, FormGroup? form, String? chatControlName});
 }
 
 /// @nodoc
@@ -346,6 +352,7 @@ class __$$_InitialCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = null,
     Object? form = freezed,
+    Object? chatControlName = freezed,
   }) {
     return _then(_$_Initial(
       isLoading: null == isLoading
@@ -356,6 +363,10 @@ class __$$_InitialCopyWithImpl<$Res>
           ? _value.form
           : form // ignore: cast_nullable_to_non_nullable
               as FormGroup?,
+      chatControlName: freezed == chatControlName
+          ? _value.chatControlName
+          : chatControlName // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -363,16 +374,18 @@ class __$$_InitialCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Initial implements _Initial {
-  const _$_Initial({required this.isLoading, this.form});
+  const _$_Initial({required this.isLoading, this.form, this.chatControlName});
 
   @override
   final bool isLoading;
   @override
   final FormGroup? form;
+  @override
+  final String? chatControlName;
 
   @override
   String toString() {
-    return 'ChatState(isLoading: $isLoading, form: $form)';
+    return 'ChatState(isLoading: $isLoading, form: $form, chatControlName: $chatControlName)';
   }
 
   @override
@@ -382,11 +395,14 @@ class _$_Initial implements _Initial {
             other is _$_Initial &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
-            (identical(other.form, form) || other.form == form));
+            (identical(other.form, form) || other.form == form) &&
+            (identical(other.chatControlName, chatControlName) ||
+                other.chatControlName == chatControlName));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLoading, form);
+  int get hashCode =>
+      Object.hash(runtimeType, isLoading, form, chatControlName);
 
   @JsonKey(ignore: true)
   @override
@@ -397,12 +413,16 @@ class _$_Initial implements _Initial {
 
 abstract class _Initial implements ChatState {
   const factory _Initial(
-      {required final bool isLoading, final FormGroup? form}) = _$_Initial;
+      {required final bool isLoading,
+      final FormGroup? form,
+      final String? chatControlName}) = _$_Initial;
 
   @override
   bool get isLoading;
   @override
   FormGroup? get form;
+  @override
+  String? get chatControlName;
   @override
   @JsonKey(ignore: true)
   _$$_InitialCopyWith<_$_Initial> get copyWith =>

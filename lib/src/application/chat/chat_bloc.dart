@@ -21,15 +21,16 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
         state.copyWith(
           isLoading: false,
           form: facade.form,
+          chatControlName: facade.chatControlName,
         ),
       );
     });
     on<_ChatEventSendMessage>((event, emit) {
       // TODO ADD LOGIC HERE!
-      print('-'*100);
+      print('-' * 100);
       print('Ejecutando este vento');
       print(facade.form.rawValue);
-      print('-'*100);
+      print('-' * 100);
     });
   }
 }

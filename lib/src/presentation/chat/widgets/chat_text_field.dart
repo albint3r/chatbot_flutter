@@ -15,6 +15,7 @@ class ChatTextField extends StatelessWidget {
     final bloc = context.watch<ChatBloc>();
     final state = bloc.state;
     final size = MediaQuery.of(context).size;
+    final theme = Theme.of(context);
     if (state.isLoading) return const CircularProgressIndicator();
 
     return Padding(
@@ -26,12 +27,15 @@ class ChatTextField extends StatelessWidget {
           children: [
             Card(
               child: SizedBox(
-                height: 50,
+                height: 60,
                 width: size.width * .80,
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: ReactiveTextField(
-                    formControlName: 'chat',
+                    style: theme.textTheme.bodyMedium,
+                    maxLines: 2,
+                    formControlName: state.chatControlName,
+                    // formControlName: state!.form!.rawValue!.keys![0],
                   ),
                 ),
               ),

@@ -5,6 +5,7 @@ class ChatState with _$ChatState {
   const factory ChatState({
     required bool isLoading,
     FormGroup? form,
+    String? chatControlName,
   }) = _Initial;
 
   factory ChatState.initial() => const ChatState(

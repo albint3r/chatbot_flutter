@@ -14,4 +14,8 @@ class ChatFacadeImpl implements IChatFacade {
 
   @override
   FormGroup get form => chatForm.form;
+
+  /// Is the Name Controller of the Chat Field.
+  @override
+  String get chatControlName => form.rawValue.keys.first;
 }

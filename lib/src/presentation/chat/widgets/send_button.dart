@@ -27,6 +27,7 @@ class SendButton extends StatelessWidget {
     final bloc = context.watch<ChatBloc>();
     final state = bloc.state;
     final colorScheme = Theme.of(context).colorScheme;
+    const double square = 50;
     return ReactiveFormConsumer(
       builder: (context, _, __) {
         return InkWell(
@@ -35,8 +36,8 @@ class SendButton extends StatelessWidget {
             decoration: _boxDecoration(
               colorScheme,
             ),
-            width: 50,
-            height: 50,
+            width: square,
+            height: square,
             child: Icon(
               Icons.send,
               color: colorScheme.onSecondary,
